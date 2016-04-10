@@ -14,6 +14,7 @@
 		FB70F63C1CB8D5D7006C2A9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB70F63A1CB8D5D7006C2A9C /* LaunchScreen.storyboard */; };
 		FB70F6471CB8D5D8006C2A9C /* LooperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70F6461CB8D5D8006C2A9C /* LooperTests.swift */; };
 		FB70F6521CB8D5D8006C2A9C /* LooperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70F6511CB8D5D8006C2A9C /* LooperUITests.swift */; };
+		FB70F6601CB8D731006C2A9C /* LooperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70F65F1CB8D731006C2A9C /* LooperModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		FB70F64D1CB8D5D8006C2A9C /* LooperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LooperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB70F6511CB8D5D8006C2A9C /* LooperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooperUITests.swift; sourceTree = "<group>"; };
 		FB70F6531CB8D5D8006C2A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB70F65F1CB8D731006C2A9C /* LooperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooperModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				FB70F6381CB8D5D7006C2A9C /* Assets.xcassets */,
 				FB70F63A1CB8D5D7006C2A9C /* LaunchScreen.storyboard */,
 				FB70F63D1CB8D5D7006C2A9C /* Info.plist */,
+				FB70F65F1CB8D731006C2A9C /* LooperModel.swift */,
 			);
 			path = Looper;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB70F6601CB8D731006C2A9C /* LooperModel.swift in Sources */,
 				FB70F6341CB8D5D7006C2A9C /* ViewController.swift in Sources */,
 				FB70F6321CB8D5D7006C2A9C /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Looper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Naoki-Tomita.Looper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -416,6 +421,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Looper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Naoki-Tomita.Looper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -487,6 +493,7 @@
 				FB70F6581CB8D5D8006C2A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB70F6591CB8D5D8006C2A9C /* Build configuration list for PBXNativeTarget "LooperTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +502,7 @@
 				FB70F65B1CB8D5D8006C2A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB70F65C1CB8D5D8006C2A9C /* Build configuration list for PBXNativeTarget "LooperUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +511,7 @@
 				FB70F65E1CB8D5D8006C2A9C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
