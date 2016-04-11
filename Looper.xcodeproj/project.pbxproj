@@ -15,6 +15,7 @@
 		FB70F6471CB8D5D8006C2A9C /* LooperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70F6461CB8D5D8006C2A9C /* LooperTests.swift */; };
 		FB70F6521CB8D5D8006C2A9C /* LooperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70F6511CB8D5D8006C2A9C /* LooperUITests.swift */; };
 		FB70F6601CB8D731006C2A9C /* LooperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB70F65F1CB8D731006C2A9C /* LooperModel.swift */; };
+		FB816BAD1CBA76CA00386486 /* Looper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB816BAC1CBA76CA00386486 /* Looper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FB70F6511CB8D5D8006C2A9C /* LooperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LooperUITests.swift; sourceTree = "<group>"; };
 		FB70F6531CB8D5D8006C2A9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB70F65F1CB8D731006C2A9C /* LooperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LooperModel.swift; sourceTree = "<group>"; };
+		FB816BAC1CBA76CA00386486 /* Looper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Looper.swift; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FB70F63A1CB8D5D7006C2A9C /* LaunchScreen.storyboard */,
 				FB70F63D1CB8D5D7006C2A9C /* Info.plist */,
 				FB70F65F1CB8D731006C2A9C /* LooperModel.swift */,
+				FB816BAC1CBA76CA00386486 /* Looper.swift */,
 			);
 			path = Looper;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB816BAD1CBA76CA00386486 /* Looper.swift in Sources */,
 				FB70F6601CB8D731006C2A9C /* LooperModel.swift in Sources */,
 				FB70F6341CB8D5D7006C2A9C /* ViewController.swift in Sources */,
 				FB70F6321CB8D5D7006C2A9C /* AppDelegate.swift in Sources */,

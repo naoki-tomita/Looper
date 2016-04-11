@@ -12,7 +12,7 @@ class ViewController: UIViewController {
 
   let btPlay: UIButton = UIButton();
   var playing = false;
-  let looper: LooperModel = LooperModel();
+  let looper: Looper = Looper();
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
       btPlay.sizeToFit();
       playing = true;
 
-      looper.start();
+      looper.begin();
     }
   }
 

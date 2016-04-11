@@ -14,7 +14,6 @@ import AVFoundation
  */
 class LooperModel {
   var audioUnit: AudioUnit?;
-  var auGraph: AUGraph = AUGraph();
   let kOutputBus: UInt32 = 0;
   let kInputBus: UInt32 = 1;
 
@@ -115,29 +114,29 @@ class LooperModel {
 
 var bufs: AudioBufferList?;
 
-func RecordingCallback(
-  inRefCon: UnsafeMutablePointer<Void>,
-  ioActionFlags: UnsafeMutablePointer<AudioUnitRenderActionFlags>,
-  inTimeStamp: UnsafePointer<AudioTimeStamp>,
-  inBusNumber: UInt32,
-  inNumberFrames: UInt32,
-  ioData: UnsafeMutablePointer<AudioBufferList>) -> (OSStatus)
-{
-  var err :OSStatus? = nil
-
-  let buffer = allocateAudioBuffer(1 ,size: inNumberFrames)
-  bufs = AudioBufferList.init(mNumberBuffers: 1, mBuffers: buffer)
-  let au = UnsafeMutablePointer<AudioUnit>(inRefCon).memory;
-
-  err = AudioUnitRender(au,
-                        ioActionFlags,
-                        inTimeStamp,
-                        inBusNumber,
-                        inNumberFrames,
-                        &bufs!)
-
-  return err!
-}
+//func RecordingCallback(
+//  inRefCon: UnsafeMutablePointer<Void>,
+//  ioActionFlags: UnsafeMutablePointer<AudioUnitRenderActionFlags>,
+//  inTimeStamp: UnsafePointer<AudioTimeStamp>,
+//  inBusNumber: UInt32,
+//  inNumberFrames: UInt32,
+//  ioData: UnsafeMutablePointer<AudioBufferList>) -> (OSStatus)
+//{
+//  var err :OSStatus? = nil
+//
+//  let buffer = allocateAudioBuffer(1 ,size: inNumberFrames)
+//  bufs = AudioBufferList.init(mNumberBuffers: 1, mBuffers: buffer)
+//  let au = UnsafeMutablePointer<AudioUnit>(inRefCon).memory;
+//
+//  err = AudioUnitRender(au,
+//                        ioActionFlags,
+//                        inTimeStamp,
+//                        inBusNumber,
+//                        inNumberFrames,
+//                        &bufs!)
+//
+//  return err!
+//}
 
 func allocateAudioBuffer(let numChannel: UInt32, let size: UInt32) -> AudioBuffer {
   let dataSize = UInt32(numChannel * UInt32(sizeof(Float64)) * size)
@@ -156,31 +155,29 @@ func checkStatus( status: OSStatus ) {
 /**
  音声の再生中に呼ばれるコールバック関数です
  */
-func RenderCallback (
-  inRefCon: UnsafeMutablePointer<Void>,
-  ioActionFlags: UnsafeMutablePointer<AudioUnitRenderActionFlags>,
-  inTimeStamp: UnsafePointer<AudioTimeStamp>,
-  inBusNumber: UInt32,
-  inNumberFrames: UInt32,
-  ioData: UnsafeMutablePointer<AudioBufferList>) -> (OSStatus)
-{
-  memcpy( ioData.memory.mBuffers.mData , &bufs!.mBuffers.mData, Int( 1 * inNumberFrames * UInt32( sizeof( Float64 ) ) ) );
-
-  let data=UnsafePointer<Int16>(bufs!.mBuffers.mData)
-
-  let dataArray = UnsafeBufferPointer<Int16>(start:data, count: Int(bufs!.mBuffers.mDataByteSize)/sizeof(Int16))
-
-  let io = UnsafeMutablePointer<Int16>( ioData.memory.mBuffers.mData );
-
-  let ioDataArr = UnsafeMutableBufferPointer<Int16>(start: io, count: Int(bufs!.mBuffers.mDataByteSize)/sizeof(Int16));
-
-  for i in 0...dataArray.count-1
-  {
-    ioDataArr[ i ] = dataArray[ i ];
-  }
-
-  bufs?.mBuffers.mData.dealloc(1);
-
-
-  return noErr;
-}
+//func RenderCallback (
+//  inRefCon: UnsafeMutablePointer<Void>,
+//  ioActionFlags: UnsafeMutablePointer<AudioUnitRenderActionFlags>,
+//  inTimeStamp: UnsafePointer<AudioTimeStamp>,
+//  inBusNumber: UInt32,
+//  inNumberFrames: UInt32,
+//  ioData: UnsafeMutablePointer<AudioBufferList>) -> (OSStatus)
+//{
+//  let data=UnsafePointer<Int16>(bufs!.mBuffers.mData)
+//
+//  let dataArray = UnsafeBufferPointer<Int16>(start:data, count: Int(bufs!.mBuffers.mDataByteSize)/sizeof(Int16))
+//
+//  let io = UnsafeMutablePointer<Int16>( ioData.memory.mBuffers.mData );
+//
+//  let ioDataArr = UnsafeMutableBufferPointer<Int16>(start: io, count: Int(bufs!.mBuffers.mDataByteSize)/sizeof(Int16));
+//
+//  for i in 0...dataArray.count-1
+//  {
+//    ioDataArr[ i ] = dataArray[ i ];
+//  }
+//
+//  bufs?.mBuffers.mData.dealloc(1);
+//
+//
+//  return noErr;
+//}
